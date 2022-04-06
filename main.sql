@@ -33,22 +33,22 @@ INSERT INTO post(id, nombre_usuario, fecha_creacion, contenido, descripcion, tit
 --Parte 2
 --1. Crear una nueva tabla llamada “comentarios”, con los atributos id, fecha, hora de
 --creación y contenido, que se relacione con la tabla posts.
-CREATE TABLE comentarios(id INT, fecha DATE, hora_creacion TIME, contenido VARCHAR(255), FOREIGN KEY (id) REFERENCES post(id));
+CREATE TABLE comentarios(id INT, id_post INT, fecha DATE, hora_creacion TIME, contenido VARCHAR(255), PRIMARY KEY (id), FOREIGN KEY (id_post) REFERENCES post(id));
 
 --2. Crear 2 comentarios para el post de "Pamela" y 4 para "Carlos".
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (1, '1999-01-02', '23:12:45', 'Ejemplo de comentario 1');
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (2, '1984-08-19', '12:12:45', 'Ejemplo de comentario 2');
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (6, '1999-01-02', '13:12:45', 'Ejemplo de comentario 1');
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (6, '1999-01-02', '14:12:45', 'Ejemplo de comentario 2');
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (6, '1999-01-02', '15:12:45', 'Ejemplo de comentario 3');
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (6, '1999-01-02', '16:12:45', 'Ejemplo de comentario 4');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (1, 1, '1999-01-02', '23:12:45', 'Ejemplo de comentario 1');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (2, 2, '1984-08-19', '12:12:45', 'Ejemplo de comentario 2');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (3, 6, '1999-01-02', '13:12:45', 'Ejemplo de comentario 1');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (4, 6, '1999-01-02', '14:12:45', 'Ejemplo de comentario 2');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (5, 6, '1999-01-02', '15:12:45', 'Ejemplo de comentario 3');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (6, 6, '1999-01-02', '16:12:45', 'Ejemplo de comentario 4');
 
 --3. Crear un nuevo post para "Margarita".
 INSERT INTO post(id, nombre_usuario, fecha_creacion, contenido, descripcion, titulo) VALUES (7, 'Margarita', '1815-03-22', 'Ejemplo de contenido Margarita', 'Ejemplo de descripcion Margarita', 'Titulo Margarita');
 
 --4. Ingresar 5 comentarios para el post de Margarita.
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (7, '1959-01-22', '23:12:45', 'Ejemplo de comentario margarita 1');
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (7, '1954-08-29', '12:12:45', 'Ejemplo de comentario margarita 2');
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (7, '1959-03-22', '13:12:45', 'Ejemplo de comentario margarita 3');
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (7, '1959-11-22', '14:12:45', 'Ejemplo de comentario margarita 4');
-INSERT INTO comentarios(id, fecha, hora_creacion, contenido) VALUES (7, '1959-12-22', '15:12:45', 'Ejemplo de comentario margarita 5');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (7, 7, '1959-01-22', '23:12:45', 'Ejemplo de comentario margarita 1');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (8, 7, '1954-08-29', '12:12:45', 'Ejemplo de comentario margarita 2');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (9, 7, '1959-03-22', '13:12:45', 'Ejemplo de comentario margarita 3');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (10, 7, '1959-11-22', '14:12:45', 'Ejemplo de comentario margarita 4');
+INSERT INTO comentarios(id, id_post, fecha, hora_creacion, contenido) VALUES (11, 7, '1959-12-22', '15:12:45', 'Ejemplo de comentario margarita 5');
